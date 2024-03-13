@@ -15,7 +15,7 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
 
 app = Flask(__name__)
-CORS(app)  
+CORS(app, resources={r"/summary": {"origins": "http://localhost:3000"}})    
 
 def preprocess_text(text):
     sentences = sent_tokenize(text)
